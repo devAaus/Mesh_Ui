@@ -35,6 +35,15 @@ module.exports = {
           },
         },
       },
+      colors: {
+        bgLight: '#f1faee',
+        bgDark: '#161716',
+        hLight: '#161716',
+        hDark: '#fbfafb',
+        tLight: '#0d1b2a',
+        tDark: '#e0e1dd'
+
+      }
     },
   },
   plugins: [
