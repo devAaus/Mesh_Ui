@@ -27,7 +27,7 @@ const ThemeButton = () => {
             />
 
             <label
-                for="react-option"
+                htmlFor="react-option"
                 className="flex z-10 items-center peer relative justify-center w-8 h-8 duration-300  cursor-pointer"
             >
             </label>

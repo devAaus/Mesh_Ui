@@ -6,12 +6,12 @@ export const GET = async (req, { params }) => {
     const { id } = params;
 
     try {
-        const comp = await prisma.component.update({
+        const post = await prisma.component.update({
             where: { id },
             data: { views: { increment: 1 } },
         });
 
-        return new NextResponse(JSON.stringify(comp, { status: 200 }));
+        return new NextResponse(JSON.stringify(post, { status: 200 }));
     } catch (err) {
         console.log(err);
         return new NextResponse(

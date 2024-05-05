@@ -6,7 +6,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { data } from "./data";
 import { FaSearch } from "react-icons/fa";
 
-const heading = `Building Better Interfaces`;
+
 const text = `Copy, paste, customize – and with open-source freedom.`;
 
 const Home = () => {
