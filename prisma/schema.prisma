@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id          String  @id @default(cuid()) @map("_id")
+  title       String
+  slug        String  @unique
+  Components  Component[]
+}
+
+model Component {
+  id          String @id @default(cuid()) @map("_id")
+  title       String
+  code        String
+  catSlug     String
+  cat         Category  @relation(fields: [catSlug], references: [slug])
+  views       Int @default(0)
+  isFeatured  Boolean @default(false)
+}
