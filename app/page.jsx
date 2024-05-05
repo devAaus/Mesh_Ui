@@ -2,42 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { data } from "./data";
+import { FaSearch } from "react-icons/fa";
 
-const testimonials = [
-    {
-        quote:
-            "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-        name: "Charles Dickens",
-        title: "A Tale of Two Cities",
-    },
-    {
-        quote:
-            "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-        name: "William Shakespeare",
-        title: "Hamlet",
-    },
-    {
-        quote: "All that we see or seem is but a dream within a dream.",
-        name: "Edgar Allan Poe",
-        title: "A Dream Within a Dream",
-    },
-    {
-        quote:
-            "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-        name: "Jane Austen",
-        title: "Pride and Prejudice",
-    },
-    {
-        quote:
-            "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-        name: "Herman Melville",
-        title: "Moby-Dick",
-    },
-];
-
-const words = `Copy, paste, customize – and with open-source freedom.`;
+const heading = `Building Better Interfaces`;
+const text = `Copy, paste, customize – and with open-source freedom.`;
 
 const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -46,38 +16,54 @@ const Home = () => {
         setIsLoaded(true);
     }, []);
 
+    const firstMovingCard = data.filter(item => item.id >= 1 && item.id <= 6);
+    const secondMovingCard = data.filter(item => item.id >= 7 && item.id <= 12);
+    const thirdMovingCard = data.filter(item => item.id >= 13 && item.id <= 18);
+
+
     return (
-        <div className="min-h-screen w-full py-52 bg-[#161716] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className=" w-full py-52  antialiased relative">
             {/* <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="#e9e9e8"
       /> */}
+
+
             <div className="max-w-7xl mx-auto relative z-10 w-full">
-                <h1 className="text-6xl font-bold text-center bg-clip-text text-[#fbfafb] bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Building Better Interfaces
+                <h1 className="text-4xl md:text-6xl font-bold text-center bg-clip-text text-hLight dark:text-hDark bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
+                    {isLoaded && 'Building Better Interfaces'}
                 </h1>
-                <div className="mt-4 text-center max-w-xl mx-auto">
-                    {isLoaded && <TextGenerateEffect words={words} />}
+
+                <div className="my-4 text-center max-w-xl mx-auto">
+                    {isLoaded && <TextGenerateEffect words={text} />}
                 </div>
             </div>
+
+            <form className='lg:hidden w-1/2 lg:w-1/3 mx-auto border-2 border-black bg-[#f3f3f2]  shadow-xl rounded-full flex items-center px-2'>
+                <input type="text " placeholder='Search for components ....' className='p-2 rounded-full outline-none w-[93%] bg-transparent' />
+
+                <button type='submit '>
+                    <FaSearch size={20} color='black' />
+                </button>
+            </form>
 
             <div className="mt-52 rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
                 {isLoaded && (
                     <>
 
                         <InfiniteMovingCards
-                            items={testimonials}
+                            data={firstMovingCard}
                             direction="right"
                             speed="slow"
                         />
 
                         <InfiniteMovingCards
-                            items={testimonials}
+                            data={secondMovingCard}
                             direction="left"
                             speed="slow"
                         />
                         <InfiniteMovingCards
-                            items={testimonials}
+                            data={thirdMovingCard}
                             direction="right"
                             speed="slow"
                         />

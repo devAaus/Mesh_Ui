@@ -39,7 +39,7 @@ module.exports = {
         bgLight: '#f1faee',
         bgDark: '#161716',
         hLight: '#161716',
-        hDark: '#fbfafb',
+        hDark: '#f3f3f2',
         tLight: '#0d1b2a',
         tDark: '#e0e1dd'
 

@@ -1,10 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/util";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { FaCode } from "react-icons/fa";
 
 export const InfiniteMovingCards = ({
-    items,
+    data,
     direction = "left",
     speed = "fast",
     pauseOnHover = true,
@@ -63,6 +65,8 @@ export const InfiniteMovingCards = ({
             }
         }
     };
+
+
     return (
         <div
             ref={containerRef}
@@ -79,31 +83,20 @@ export const InfiniteMovingCards = ({
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >
-                {items.map((item, idx) => (
-                    <li
-                        className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700 px-8 py-6 bg-[#e9e9e8] backdrop-blur-3xl shadow-xl"
+                {data.map((item, idx) => (
 
-                        key={item.name}
+                    <li
+                        className="w-[300px] h-[250px] max-w-full relative rounded-2xl border border-b-0 flex  items-center justify-center border-slate-700 px-8 py-6 bg-[#e9e9e8] backdrop-blur-3xl shadow-xl "
+                        key={item.id}
                     >
-                        <blockquote>
-                            <div
-                                aria-hidden="true"
-                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-                            ></div>
-                            <span className=" relative z-20 text-sm leading-[1.6] text-gray-900 font-normal">
-                                {item.quote}
+
+                        <div className="flex">{item.code}</div>
+
+                        <Link href={'./'}>
+                            <span className="absolute bottom-4 right-4 bg-black/60 px-2 py-1 rounded-xl text-white shadow-md flex gap-2 items-center">
+                                <FaCode /> Get Code
                             </span>
-                            <div className="relative z-20 mt-6 flex flex-row items-center">
-                                <span className="flex flex-col gap-1">
-                                    <span className=" text-sm leading-[1.6] text-gray-600 font-normal">
-                                        {item.name}
-                                    </span>
-                                    <span className=" text-sm leading-[1.6] text-gray-600 font-normal">
-                                        {item.title}
-                                    </span>
-                                </span>
-                            </div>
-                        </blockquote>
+                        </Link>
                     </li>
                 ))}
 
