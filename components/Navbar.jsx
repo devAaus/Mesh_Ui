@@ -24,7 +24,7 @@ const Navbar = () => {
     const inView = useInView(ref, { once: true })
 
     return (
-        <nav className='w-full z-50 fixed top-0  bg-transparent backdrop-blur-xl' ref={ref}>
+        <nav className='w-full h-20 z-50 fixed top-0  bg-transparent backdrop-blur-xl' ref={ref}>
             <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}

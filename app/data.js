@@ -2,6 +2,7 @@ export const data = [
     {
         id: 1,
         name: 'Loader1',
+        category: 'loader',
         code: <div class="flex-col gap-4 w-full flex items-center justify-center">
             <div class="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
             </div>
@@ -10,13 +11,15 @@ export const data = [
     {
         id: 2,
         name: 'Button1',
-        code: <button class="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-64 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
+        category: 'button',
+        code: <button class=" group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
             See more
         </button>
     },
     {
         id: 3,
         name: 'Button2',
+        category: 'button',
         code: <div class="group relative">
             <button>
                 <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" class="w-8 hover:scale-125 duration-200 hover:stroke-blue-500 text-black"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
@@ -27,6 +30,7 @@ export const data = [
     {
         id: 4,
         name: 'Loader2',
+        category: 'loader',
         code: <button
             class="inline-block rounded-full border-2 border-rose-500 text-rose-500 hover:border-rose-600 hover:bg-rose-400 hover:bg-opacity-10 hover:text-rose-600 focus:border-rose-700 focus:text-rose-700 active:border-rose-800 active:text-rose-800 dark:border-rose-300 dark:text-rose-300 dark:hover:hover:bg-rose-300 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
             type="button"
@@ -47,6 +51,7 @@ export const data = [
     {
         id: 5,
         name: 'Button3',
+        category: 'button',
         code: <button class="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Go Back">
             <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" class="stroke-blue-300">
                 <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
@@ -56,6 +61,7 @@ export const data = [
     {
         id: 6,
         name: 'Tooltip',
+        category: 'tooltip',
         code: <section class="relative flex justify-center items-center">
             <div
                 class="group flex justify-center transition-all rounded-full bg-gray-200 p-1"
@@ -74,6 +80,7 @@ export const data = [
     {
         id: 7,
         name: 'Toogle',
+        category: 'toogle',
         code: <label class="relative inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer" />
             <div class="group peer ring-0 bg-rose-400  rounded-full outline-none duration-300 after:duration-300 w-24 h-12  shadow-md peer-checked:bg-emerald-500  peer-focus:outline-none  after:content-['✖️']  after:rounded-full after:absolute after:bg-gray-50 after:outline-none after:h-10 after:w-10 after:top-1 after:left-1 after:-rotate-180 after:flex after:justify-center after:items-center peer-checked:after:translate-x-12 peer-checked:after:content-['✔️'] peer-hover:after:scale-95 peer-checked:after:rotate-0">
@@ -83,11 +90,13 @@ export const data = [
     {
         id: 8,
         name: 'Loader3',
+        category: 'loader',
         code: <div class="loader border-r-2 rounded-full border-yellow-500 bg-yellow-300 animate-bounce aspect-square w-8 flex justify-center items-center text-yellow-700">$</div>
     },
     {
         id: 9,
         name: 'Toogle2',
+        category: 'toogle',
         code: <label class="relative block aspect-[2/0.75] cursor-pointer w-20 rounded-full  bg-gradient-to-r from-red-600 to-green-600 bg-[length:100%_100%] shadow-2xl shadow-purple-300 transition-all duration-500 [&amp;:has(input:checked)]:rotate-180  hover:bg-[length:100%_500%] focus:bg-[length:100%_500%]">
             <input type="checkbox" class="peer/input hidden" />
             <div class="absolute left-[3%] top-1/2 aspect-square h-[90%] -translate-y-1/2 rotate-180 rounded-full bg-white transition-all duration-500 peer-checked/input:left-[63%] peer-checked/input:-rotate-6"></div>
@@ -96,6 +105,7 @@ export const data = [
     {
         id: 10,
         name: 'Loader4',
+        category: 'loader',
         code: <div
             class="p-3 animate-spin drop-shadow-2xl bg-gradient-to-bl from-pink-400 via-purple-400 to-indigo-600 md:w-48 md:h-48 h-32 w-32 aspect-square rounded-full"
         >
@@ -107,6 +117,7 @@ export const data = [
     {
         id: 11,
         name: 'Toogle2',
+        category: 'toogle',
         code: <label
             class="w-9 h-10 cursor-pointer flex flex-col items-center justify-center"
         >
@@ -126,6 +137,7 @@ export const data = [
     {
         id: 12,
         name: 'ToolTip2',
+        category: 'tooltip',
         code: <section class="flex justify-center items-center">
             <button
                 href="/"
@@ -155,6 +167,7 @@ export const data = [
     {
         id: 13,
         name: 'Button4',
+        category: 'button',
         code: <div className="main flex flex-col gap-2">
             <div className="up flex gap-2">
                 <button className="card1 w-[90px] h-[90px] outline-none bg-white rounded-tl-[90px] rounded-tr-md rounded-br-md rounded-bl-md shadow-sm transition-all duration-200 ease-in-out cursor-pointer hover:scale-110 hover:bg-[#cc39a4] group">
@@ -180,6 +193,7 @@ export const data = [
     {
         id: 14,
         name: 'Button5',
+        category: 'button',
         code: <button class="cta flex items-center relative m-auto px-[18px] py-[12px] [transition:all_0.2s_ease] bg-none cursor-pointer before:content-[''] before:absolute before:top-0 before:left-0 before:block before:rounded-[50px] before:bg-[#b1dae7] before:w-[50px] before:h-[50px] before:[transition:all_0.2s_ease] hover:before:w-[100%] hover:before:bg-[#b1dae7] group active:scale-[0.95]">
 
             <span class="relative font-[' Ubuntu',_sans-serif] text-[18px] font-bold tracking-wider text-[#234567]">Hover me</span>
@@ -193,11 +207,13 @@ export const data = [
     {
         id: 15,
         name: 'Input',
-        code: <input type="text" placeholder="Write here..." name="text" class="rounded-[10px] outline-[3px] outline outline-[#FEBF00]  bg-[#e2e2e2] outline-offset-[3px] px-4 py-[10px] [transition:0.25s] focus:outline-offset-[5px] focus:bg-[#fff]" />
+        category: 'input',
+        code: <input type="text" placeholder="Write here..." name="text" class="w-52 rounded-[10px] outline-[3px] outline outline-[#FEBF00]  bg-[#e2e2e2] outline-offset-[3px] px-4 py-[10px] [transition:0.25s] focus:outline-offset-[5px] focus:bg-[#fff]" />
     },
     {
         id: 16,
         name: 'Button6',
+        category: 'button',
         code: <button
             title="Add New"
             class="group cursor-pointer outline-none hover:rotate-90 duration-300"
@@ -221,6 +237,7 @@ export const data = [
     {
         id: 17,
         name: 'Button7',
+        category: 'button',
         code: <button class="button type1 h-[50px] w-[200px] relative bg-transparent cursor-pointer border-[2px] border-[solid] border-[#252525] overflow-hidden rounded-[30px] text-[#333] [transition:all_0.5s_ease-in-out] after:content-[''] after:absolute after:left-[0] after:top-[0] after:[transition:all_0.5s_ease-in-out] after:bg-[#333] after:rounded-[30px] after:invisible after:h-[10px] after:w-[10px] after:-z-[1] hover:[box-shadow:1px_1px_200px_#252525] hover:text-[#fff] hover:border-[none] hover:after:visible hover:after:scale-[100] hover:after:translate-x-[2px]">
             <span class="btn-txt font-extrabold tracking-[4px]">Hello</span>
         </button>
@@ -228,8 +245,9 @@ export const data = [
     {
         id: 18,
         name: 'Input2',
+        category: 'input',
         code: <div
-            class="relative group rounded-lg w-64 bg-gray-50 overflow-hidden before:absolute before:w-12 before:h-12 before:content[''] before:right-0 before:bg-violet-500 before:rounded-full before:blur-lg before:[box-shadow:-60px_20px_10px_10px_#F9B0B9]"
+            class="relative group rounded-lg w-52 bg-gray-50 overflow-hidden before:absolute before:w-12 before:h-12 before:content[''] before:right-0 before:bg-violet-500 before:rounded-full before:blur-lg before:[box-shadow:-60px_20px_10px_10px_#F9B0B9]"
         >
             <svg
                 y="0"
@@ -264,7 +282,8 @@ export const data = [
     {
         id: 19,
         name: 'Checkbox',
-        code: <label class="cyberpunk-checkbox-label text-[18px] text-[#fff] cursor-pointer select-none flex items-center">
+        category: 'checkbox',
+        code: <label class="cyberpunk-checkbox-label text-[18px] text-[#000] cursor-pointer select-none flex items-center">
             <input type="checkbox" class="cyberpunk-checkbox appearance-none w-5 h-5 border-[2px] border-[solid] border-[#30cfd0] rounded-md bg-transparent inline-block relative mr-3 cursor-pointer before:content-[''] before:bg-[#30cfd0] before:block before:absolute before:top-2/4 before:left-2/4 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:w-[10px] before:h-[10px] before:rounded-[3px] before:[transition:all_0.3s_ease-in-out] checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:scale-100" />
             Check me
         </label>
