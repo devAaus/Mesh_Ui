@@ -86,7 +86,7 @@ export const InfiniteMovingCards = ({
                 {data.map((item, idx) => (
 
                     <li
-                        className="w-[300px] h-[250px] max-w-full relative rounded-2xl border border-b-0 flex  items-center justify-center border-slate-700 px-8 py-6 bg-[#e9e9e8] backdrop-blur-3xl shadow-xl "
+                        className="w-[300px] h-[250px] max-w-full relative rounded-2xl flex  items-center justify-center px-8 py-6 bg-bgBox backdrop-blur-3xl shadow-xl "
                         key={item.id}
                     >
 
@@ -99,11 +99,7 @@ export const InfiniteMovingCards = ({
                         </Link>
                     </li>
                 ))}
-
-
             </ul>
-
-
         </div>
     );
 };

@@ -3,29 +3,23 @@ export const data = [
         id: 1,
         name: 'Loader1',
         category: 'loader',
-        code: <div className="flex-col gap-4 w-full flex items-center justify-center">
-            <div className="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full">
-            </div>
-        </div>
+        code:
+            <div className="flex-col gap-4 w-full flex items-center justify-center"><div className="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full"></div></div>
     },
     {
         id: 2,
         name: 'Button1',
         category: 'button',
-        code: <button className=" group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg">
-            See more
-        </button>
+        code:
+            <button className=" group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:border-rose-300 hover:before:[box-shadow:_20px_20px_20px_30px_#a21caf] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4  origin-left hover:decoration-2 hover:text-rose-300 relative bg-neutral-800 h-16 w-52 border text-left p-3 text-gray-50 text-base font-bold rounded-lg  overflow-hidden  before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-violet-500 before:rounded-full before:blur-lg  after:absolute after:z-10 after:w-20 after:h-20 after:content['']  after:bg-rose-300 after:right-8 after:top-3 after:rounded-full after:blur-lg"> See more</button>
     },
     {
         id: 3,
         name: 'Button2',
         category: 'button',
-        code: <div className="group relative">
-            <button>
-                <svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" className="w-8 hover:scale-125 duration-200 hover:stroke-blue-500 text-black"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </button>
-            <span className="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left text-black scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">GitHub<span>
-            </span></span></div>
+        code:
+            <div className="group relative"><button><svg stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="currentColor" fill="none" viewBox="0 0 24 24" className="w-8 hover:scale-125 duration-200 hover:stroke-blue-500 text-white"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></button><span className="absolute -top-14 left-[50%] -translate-x-[50%] z-20 origin-left text-black scale-0 px-3 rounded-lg border border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out group-hover:scale-100">GitHub</span>
+            </div>
     },
     {
         id: 4,
@@ -62,20 +56,8 @@ export const data = [
         id: 6,
         name: 'Tooltip',
         category: 'tooltip',
-        code: <section className="relative flex justify-center items-center">
-            <div
-                className="group flex justify-center transition-all rounded-full bg-gray-200 p-1"
-            >
-                <svg viewBox="0 0 320 512" className="w-4 h-4">
-                    <path
-                        d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
-                    ></path>
-                </svg>
-                <span
-                    className="absolute opacity-0 text-black group-hover:opacity-100 group-hover:-translate-y-7 duration-700 text-sm"
-                >Information</span>
-            </div>
-        </section>
+        code:
+            <section className="relative flex justify-center items-center"><div className="group flex justify-center transition-all rounded-full bg-gray-200 p-1"><svg viewBox="0 0 320 512" className="w-4 h-4"><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"></path></svg><span className="absolute opacity-0 text-white group-hover:opacity-100 group-hover:-translate-y-7 duration-700 text-sm">Information</span></div></section>
     },
     {
         id: 7,
@@ -239,9 +221,8 @@ export const data = [
         id: 17,
         name: 'Button7',
         category: 'button',
-        code: <button className="button type1 h-[50px] w-[200px] relative bg-transparent cursor-pointer border-[2px] border-[solid] border-[#252525] overflow-hidden rounded-[30px] text-[#333] [transition:all_0.5s_ease-in-out] after:content-[''] after:absolute after:left-[0] after:top-[0] after:[transition:all_0.5s_ease-in-out] after:bg-[#333] after:rounded-[30px] after:invisible after:h-[10px] after:w-[10px] after:-z-[1] hover:[box-shadow:1px_1px_200px_#252525] hover:text-[#fff] hover:border-[none] hover:after:visible hover:after:scale-[100] hover:after:translate-x-[2px]">
-            <span className="btn-txt font-extrabold tracking-[4px]">Hello</span>
-        </button>
+        code:
+            <button className="button type1 h-[50px] w-[200px] relative bg-transparent cursor-pointer border-[2px] border-[solid] border-[#fff] overflow-hidden rounded-[30px] text-[#fff] [transition:all_0.5s_ease-in-out] after:content-[''] after:absolute after:left-[0] after:top-[0] after:[transition:all_0.5s_ease-in-out] after:bg-[#fff] after:rounded-[30px] after:invisible after:h-[10px] after:w-[10px] after:-z-[1] hover:[box-shadow:1px_1px_200px_#252525] hover:text-[#000] hover:border-[none] hover:after:visible hover:after:scale-[100] hover:after:translate-x-[2px]"><span className="btn-txt font-extrabold tracking-[4px]">Hello</span></button>
     },
     {
         id: 18,
@@ -284,9 +265,10 @@ export const data = [
         id: 19,
         name: 'Checkbox',
         category: 'checkbox',
-        code: <label className="cyberpunk-checkbox-label text-[18px] text-[#000] cursor-pointer select-none flex items-center">
-            <input type="checkbox" className="cyberpunk-checkbox appearance-none w-5 h-5 border-[2px] border-[solid] border-[#30cfd0] rounded-md bg-transparent inline-block relative mr-3 cursor-pointer before:content-[''] before:bg-[#30cfd0] before:block before:absolute before:top-2/4 before:left-2/4 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:w-[10px] before:h-[10px] before:rounded-[3px] before:[transition:all_0.3s_ease-in-out] checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:scale-100" />
-            Check me
-        </label>
+        code:
+            <label className="cyberpunk-checkbox-label text-[18px] text-[#fff] cursor-pointer select-none flex items-center">
+                <input type="checkbox" className="cyberpunk-checkbox appearance-none w-5 h-5 border-[2px] border-[solid] border-[#30cfd0] rounded-md bg-transparent inline-block relative mr-3 cursor-pointer before:content-[''] before:bg-[#30cfd0] before:block before:absolute before:top-2/4 before:left-2/4 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:w-[10px] before:h-[10px] before:rounded-[3px] before:[transition:all_0.3s_ease-in-out] checked:before:-translate-x-1/2 checked:before:-translate-y-1/2 checked:before:scale-100" />
+                Check me
+            </label>
     }
 ]

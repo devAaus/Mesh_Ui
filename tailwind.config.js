@@ -36,11 +36,12 @@ module.exports = {
         },
       },
       colors: {
-        bgLight: '#f1faee',
+        bgLight: '#161716',
         bgDark: '#161716',
-        hLight: '#161716',
+        bgBox: '#212121',
+        hLight: '#f3f3f2',
         hDark: '#f3f3f2',
-        tLight: '#0d1b2a',
+        tLight: '#e0e1dd',
         tDark: '#e0e1dd'
 
       }

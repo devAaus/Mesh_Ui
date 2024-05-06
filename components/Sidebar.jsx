@@ -34,7 +34,7 @@ const Sidebar = () => {
 
 
     return (
-        <div className='w-[250px] min-h-screen mx-4 sticky top-0 left-0 pb-4 hidden lg:flex flex-col gap-3 overflow-hidden' >
+        <div className='w-[250px] min-h-screen mx-4 sticky top-0 left-0 pb-4 hidden lg:flex flex-col gap-1 overflow-hidden' >
 
             {isLoaded &&
                 <Link href='/elements' className={`text-hLight dark:text-hDark hover:text-hDark hover:bg-[#212121] flex items-center gap-2 font-semibold px-4 mb-1 py-3 rounded-lg transition-all duration-300 ease-in-out ${pathName === '/elements' ? 'bg-[#212121] text-hDark' : ''}`}>

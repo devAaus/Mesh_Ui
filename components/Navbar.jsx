@@ -3,22 +3,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaGithub } from "react-icons/fa";
-import { LuSunMedium, LuMoonStar } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
-import { useTheme } from 'next-themes';
-import ThemeButton from './ThemeButton';
 
 const Navbar = () => {
-
-    const [themeIcon, setThemeIcon] = useState(true)
-    const { theme, setTheme } = useTheme()
-
-    const toogleTheme = () => {
-        setThemeIcon(!themeIcon)
-        setTheme(theme === 'light' ? 'dark' : 'light')
-    }
 
     const ref = useRef()
     const inView = useInView(ref, { once: true })
@@ -57,17 +46,8 @@ const Navbar = () => {
                         <h1 className='text-base font-medium text-gray-400'>v1.0</h1>
 
                         <Link href={'/'}>
-                            <FaGithub size={20} />
+                            <FaGithub size={20} color='#e0e1dd' />
                         </Link>
-
-                        {/* <btn onClick={toogleTheme} className='cursor-pointer'>
-                            {themeIcon
-                                ? <LuSunMedium size={20} />
-                                : <LuMoonStar size={20} />
-                            }
-                        </btn> */}
-
-                        <ThemeButton />
 
                     </div>
 
