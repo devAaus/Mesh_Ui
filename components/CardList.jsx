@@ -16,7 +16,6 @@ const CardList = () => {
 
         const data = await res.json()
         setComponent(data.posts);
-        console.log(data.posts);
 
     };
 

@@ -7,18 +7,22 @@ import CodeBlock from '@/components/CodeBlock';
 import CopyButton from '@/components/CopyButton';
 
 const getData = async (id) => {
-    const res = await fetch(
-        `${process.env.NEXTAUTH_URL}/api/components/${id}`,
-        {
-            cache: "no-store",
+    try {
+        const res = await fetch(
+            `${process.env.NEXTAUTH_URL}/api/components/${id}`,
+            {
+                cache: "no-store",
+            }
+        );
+
+        if (!res.ok) {
+            throw new Error("Failed");
         }
-    );
 
-    if (!res.ok) {
-        throw new Error("Failed");
+        return res.json();
+    } catch (error) {
+        throw new Error(error);
     }
-
-    return res.json();
 };
 
 const SingleElement = async ({ params }) => {
