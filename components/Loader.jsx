@@ -1,24 +1,20 @@
-import React from 'react';
+"use client"
+
+import NextTopLoader from "nextjs-toploader";
+
 
 const Loader = () => {
-    const progressAnimationKeyframes = `
-        @keyframes progressAnimation {
-            from {
-                width: 0%;
-            }
-            to {
-                width: 100%;
-            }
-        }
-    `;
 
     return (
-        <div className="progress-container w-[100%] h-[6px] rounded-3xl overflow-hidden">
-            <style>{progressAnimationKeyframes}</style>
-            <div className="progress-bar h-full bg-[#007bff] rounded-3xl animate-progressAnimation"
-                style={{ animationDuration: '3s', animationTimingFunction: 'ease', animationFillMode: 'forwards' }}>
-            </div>
-        </div>
+        <NextTopLoader
+            color="#8266f6"
+            initialPosition={0.08}
+            crawlSpeed={500}
+            height={3}
+            showSpinner={false}
+            speed={500}
+            shadow={false}
+        />
     );
 }
 
