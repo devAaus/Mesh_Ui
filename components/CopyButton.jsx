@@ -12,7 +12,7 @@ const CopyButton = ({ code }) => {
         setCopied(true);
         setTimeout(() => {
             setCopied(false);
-        }, 3000);
+        }, 2000);
     };
 
     return (

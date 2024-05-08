@@ -6,13 +6,12 @@ export const GET = async (req, { params }) => {
     const { id } = params;
 
     try {
-        // Increment views count in the database
+
         await prisma.component.update({
             where: { id },
             data: { views: { increment: 1 } },
         });
 
-        // Fetch and return the updated post
         const post = await prisma.component.findUnique({ where: { id } });
         if (!post) {
             return new NextResponse(
@@ -20,7 +19,7 @@ export const GET = async (req, { params }) => {
             );
         }
 
-        return new NextResponse(JSON.stringify(post), { status: 200 });
+        return new NextResponse(JSON.stringify({ post }, { status: 200 }));
     } catch (error) {
         console.error("Error fetching post:", error);
         return new NextResponse(

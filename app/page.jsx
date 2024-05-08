@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { data } from "./data";
 import { FaSearch } from "react-icons/fa";
 
 
@@ -12,22 +11,30 @@ const text = `Copy, paste, customize – and with open-source freedom.`;
 const Home = () => {
     const [isLoaded, setIsLoaded] = useState(false);
 
+    const [component, setComponent] = useState([]);
+
+    const getdata = async () => {
+        const res = await fetch(`/api/components`)
+
+        if (!res.ok) {
+            throw new Error('Failed to fetch data')
+        }
+
+        const data = await res.json()
+        setComponent(data.posts);
+
+    };
+
     useEffect(() => {
         setIsLoaded(true);
+        getdata();
     }, []);
 
-    const firstMovingCard = data.filter(item => item.id >= 1 && item.id <= 6);
-    const secondMovingCard = data.filter(item => item.id >= 7 && item.id <= 12);
-    const thirdMovingCard = data.filter(item => item.id >= 13 && item.id <= 18);
 
+    console.log(component);
 
     return (
         <div className=" w-full py-52  antialiased relative">
-            {/* <Spotlight
-          className="-top-40 left-0 md:left-60 md:-top-20"
-          fill="#e9e9e8"
-      /> */}
-
 
             <div className="max-w-7xl mx-auto relative z-10 w-full">
                 <h1 className="text-4xl md:text-6xl font-bold text-center bg-clip-text text-hLight dark:text-hDark bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
@@ -52,18 +59,18 @@ const Home = () => {
                     <>
 
                         <InfiniteMovingCards
-                            data={firstMovingCard}
+                            data={component}
                             direction="right"
                             speed="slow"
                         />
 
                         <InfiniteMovingCards
-                            data={secondMovingCard}
+                            data={component}
                             direction="left"
                             speed="slow"
                         />
                         <InfiniteMovingCards
-                            data={thirdMovingCard}
+                            data={component}
                             direction="right"
                             speed="slow"
                         />

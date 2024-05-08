@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import Card from '@/components/Card'
 import { useParams } from 'next/navigation'
 
-const Elements = () => {
+const ElementsCat = () => {
 
     const { slug } = useParams()
     const [component, setComponent] = useState([]);
@@ -48,4 +48,4 @@ const Elements = () => {
     )
 }
 
-export default Elements
+export default ElementsCat
