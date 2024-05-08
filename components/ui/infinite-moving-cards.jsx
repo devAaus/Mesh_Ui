@@ -67,8 +67,6 @@ export const InfiniteMovingCards = ({
     };
 
 
-    const [isHovered, setIsHovered] = useState(false);
-
     return (
         <div
             ref={containerRef}
@@ -91,7 +89,7 @@ export const InfiniteMovingCards = ({
 
                         const doc = `
                             <html>
-                                <script src="https://cdn.tailwindcss.com"></script>
+                                <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
                                 <body class='w-[260px] h-[150px] mx-auto flex items-center justify-center'>${item.code}</body>
                             </html>
                             
