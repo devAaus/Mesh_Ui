@@ -3,18 +3,22 @@ import React from 'react'
 import CardList from '@/components/CardList'
 
 const getData = async () => {
-    const res = await fetch(
-        `${process.env.NEXTAUTH_URL}/api/components`,
-        {
-            cache: "no-store",
+    try {
+        const res = await fetch(
+            `${process.env.NEXTAUTH_URL}/api/components`,
+            {
+                cache: "no-store",
+            }
+        );
+
+        if (!res.ok) {
+            throw new Error("Failed");
         }
-    );
 
-    if (!res.ok) {
-        throw new Error("Failed");
+        return res.json();
+    } catch (error) {
+        throw new Error(error);
     }
-
-    return res.json();
 };
 
 const AllElements = async () => {
