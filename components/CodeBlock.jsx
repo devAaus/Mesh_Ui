@@ -15,6 +15,7 @@ import 'prismjs/plugins/show-invisibles/prism-show-invisibles.css'
 
 const CodeBlock = ({ language, value, onChange }) => {
 
+
     return (
         // <CodeMirror
         //     value={value}
@@ -64,13 +65,15 @@ const CodeBlock = ({ language, value, onChange }) => {
             onValueChange={onChange}
             highlight={value => highlight(value, languages.markup)}
             padding={10}
+            className='npm_react-somple-code-editor_textarea'
             style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 16,
                 backgroundColor: '#2a2734',
                 color: '#ffffff',
-                borderRadius: '5px',
-                overflow: 'auto'
+                overflow: 'auto',
+                border: 'none',
+                outline: 'none'
             }}
         />
     );

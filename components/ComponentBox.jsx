@@ -12,7 +12,7 @@ const ComponentBox = ({ post }) => {
 
     const doc = (`
         <html>
-            <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+            <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
             <body class='w-full h-[150px] flex items-center justify-center '>${html}</body>
         </html>
     `);

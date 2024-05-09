@@ -1,33 +1,38 @@
+"use client";
 
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { useEffect, useRef, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 
+const text = `Copy, paste, customize – and use beautiful custom elements made with Tailwind CSS.`;
 
-const getData = async () => {
-    try {
-        const res = await fetch(
-            `${process.env.NEXTAUTH_URL}/api/components`,
-            {
-                cache: "no-store",
+const Home = () => {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch(`/api/components`, {
+                    cache: "no-store",
+                });
+
+                if (!res.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+
+                const data = await res.json();
+                setPosts(data.posts);
+            } catch (error) {
+                console.error(error);
             }
-        );
+        };
 
-        if (!res.ok) {
-            throw new Error("Failed");
-        }
+        fetchData();
+    }, []);
 
-        return res.json();
-    } catch (error) {
-        throw new Error(error);
-    }
-};
-
-const text = `Copy, paste, customize – and with open-source freedom.`;
-
-const Home = async () => {
-
-    const { posts } = await getData();
+    const ref = useRef()
 
     return (
         <div className=" w-full py-52  antialiased relative">
@@ -40,6 +45,8 @@ const Home = async () => {
                 <div className="my-4 text-center max-w-xl mx-auto">
                     <TextGenerateEffect words={text} />
                 </div>
+
+                <div class="max-w-[1600px] w-full rounded-full h-[200px] bg-gradient-to-b from-transparent from-0% via-95% to-100% via-gray-700 to-transparent absolute left-1/2 -translate-x-1/2 md:bottom-[-70px] blur-[100px]"></div>
             </div>
 
             <form className='lg:hidden w-1/2 lg:w-1/3 mx-auto border-2 border-black bg-[#f3f3f2]  shadow-xl rounded-full flex items-center px-2'>
@@ -50,10 +57,10 @@ const Home = async () => {
                 </button>
             </form>
 
-            <div className="mt-52 rounded-md flex flex-col antialiased  items-center justify-center relative overflow-hidden">
 
+            <div className="mt-20  flex flex-col antialiased  items-center justify-center relative overflow-hidden" >
 
-                <InfiniteMovingCards
+                {/* <InfiniteMovingCards
                     data={posts}
                     direction="right"
                     speed="slow"
@@ -68,11 +75,9 @@ const Home = async () => {
                     data={posts}
                     direction="right"
                     speed="slow"
-                />
+                /> */}
 
             </div>
-
-            {/* <div dangerouslySetInnerHTML={{ __html:  }} /> */}
         </div>
     );
 };

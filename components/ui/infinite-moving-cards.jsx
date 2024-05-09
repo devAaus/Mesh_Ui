@@ -8,35 +8,33 @@ import { FaCode } from "react-icons/fa";
 export const InfiniteMovingCards = ({
     data,
     direction = "left",
-    speed = "fast",
+    speed = "slow",
     pauseOnHover = true,
     className,
 }) => {
     const containerRef = useRef(null);
     const scrollerRef = useRef(null);
 
+    useEffect(() => {
+        addAnimation();
+    }, [addAnimation]);
+
     const [start, setStart] = useState(false);
 
-    useEffect(() => {
-        function addAnimation() {
-            if (containerRef.current && scrollerRef.current) {
-                const scrollerContent = Array.from(scrollerRef.current.children);
-
-                scrollerContent.forEach((item) => {
-                    const duplicatedItem = item.cloneNode(true);
-                    if (scrollerRef.current) {
-                        scrollerRef.current.appendChild(duplicatedItem);
-                    }
-                });
-
-                getDirection();
-                getSpeed();
-                setStart(true);
-            }
+    function addAnimation() {
+        if (containerRef.current && scrollerRef.current) {
+            const scrollerContent = Array.from(scrollerRef.current.children);
+            scrollerContent.forEach((item) => {
+                const duplicatedItem = item.cloneNode(true);
+                if (scrollerRef.current) {
+                    scrollerRef.current.appendChild(duplicatedItem);
+                }
+            });
+            getDirection();
+            getSpeed();
+            setStart(true);
         }
-
-        addAnimation();
-    }, []);
+    }
 
     const getDirection = () => {
         if (containerRef.current) {
@@ -57,9 +55,9 @@ export const InfiniteMovingCards = ({
     const getSpeed = () => {
         if (containerRef.current) {
             if (speed === "fast") {
-                containerRef.current.style.setProperty("--animation-duration", "20s");
-            } else if (speed === "normal") {
-                containerRef.current.style.setProperty("--animation-duration", "40s");
+                containerRef.current.style.setProperty("--animation-duration", "80s");
+            } else if (speed === "slow") {
+                containerRef.current.style.setProperty("--animation-duration", "80s");
             } else {
                 containerRef.current.style.setProperty("--animation-duration", "80s");
             }
@@ -103,7 +101,7 @@ export const InfiniteMovingCards = ({
                                 <iframe
                                     srcDoc={doc}
                                     sandbox='allow-scripts'
-                                    loading="eager"
+                                    loading="lazy"
                                 />
 
 

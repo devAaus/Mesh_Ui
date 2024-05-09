@@ -8,25 +8,30 @@ import { useParams } from 'next/navigation'
 const ElementsCat = () => {
 
     const { slug } = useParams()
-    const [component, setComponent] = useState([]);
-
-    const getdata = async () => {
-        const res = await fetch(`/api/components`)
-
-        if (!res.ok) {
-            throw new Error('Failed to fetch data')
-        }
-
-        const data = await res.json()
-        setComponent(data.posts);
-        console.log(data.posts);
-    };
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        getdata();
+        const fetchData = async () => {
+            try {
+                const res = await fetch(`/api/components`, {
+                    cache: "no-store",
+                });
+
+                if (!res.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+
+                const data = await res.json();
+                setPosts(data.posts);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchData();
     }, []);
 
-    const filterData = component?.filter((item) => item.catSlug === slug)
+    const filterData = posts?.filter((item) => item.catSlug === slug)
 
     return (
         <div className="flex py-32 antialiased overflow-hidden">

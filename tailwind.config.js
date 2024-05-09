@@ -3,6 +3,7 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -61,7 +62,7 @@ module.exports = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
-  ]
+  ],
 };
 
 function addVariablesForColors({ addBase, theme }) {

@@ -23,29 +23,30 @@ const Sidebar = () => {
                 }
                 const data = await res.json();
                 setCategories(data);
+                setIsLoaded(true);
             } catch (error) {
                 console.error(error);
             }
         };
-
         getCat();
-        setIsLoaded(true);
     }, []);
 
 
     return (
-        <div className='w-[250px] min-h-screen mx-4 sticky top-0 left-0 pb-4 hidden lg:flex flex-col gap-1 overflow-hidden' >
+        <div className='w-[250px] h-screen mx-4 hidden  lg:block'>
+            <div className=' flex flex-col gap-1 overflow-hidden' >
 
-            {isLoaded &&
-                <Link href='/elements' className={`text-hLight dark:text-hDark hover:text-hDark hover:bg-[#212121] flex items-center gap-2 font-semibold px-4 mb-1 py-3 rounded-lg transition-all duration-300 ease-in-out ${pathName === '/elements' ? 'bg-[#212121] text-hDark' : ''}`}>
-                    All
-                </Link>}
+                {isLoaded &&
+                    <Link href='/elements' className={`text-hLight dark:text-hDark hover:text-hDark hover:bg-[#212121] flex items-center gap-2 font-semibold px-4 mb-1 py-3 rounded-lg transition-all duration-300 ease-in-out ${pathName === '/elements' ? 'bg-[#212121] text-hDark' : ''}`}>
+                        All
+                    </Link>}
 
-            {categories?.map((c) => (
-                <Link key={c.id} href={`/elements/${c.slug}`} passHref className={`text-hLight dark:text-hDark hover:text-hDark hover:bg-[#212121] flex items-center gap-2 font-semibold px-4 mb-1 py-3 rounded-lg transition-all duration-300 ease-in-out ${pathName === `/elements/${c.slug}` ? 'bg-[#212121] text-hDark' : ''}`}>
-                    {c.title}
-                </Link>
-            ))}
+                {categories?.map((c) => (
+                    <Link key={c.id} href={`/elements/${c.slug}`} passHref className={`text-hLight dark:text-hDark hover:text-hDark hover:bg-[#212121] flex items-center gap-2 font-semibold px-4 mb-1 py-3 rounded-lg transition-all duration-300 ease-in-out ${pathName === `/elements/${c.slug}` ? 'bg-[#212121] text-hDark' : ''}`}>
+                        {c.title}
+                    </Link>
+                ))}
+            </div>
         </div>
     )
 }
