@@ -1,13 +1,10 @@
 "use client";
 
-import Card from "@/components/Card";
-import CardList from "@/components/CardList";
 import HomeCard from "@/components/HomeCard";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { FaCode, FaSearch } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 const text = `Copy, paste, customize – and use beautiful custom elements made with Tailwind CSS.`;
 
@@ -72,44 +69,23 @@ const Home = () => {
             </form>
 
 
-            <div className="mt-20  flex flex-col antialiased  items-center justify-center relative overflow-hidden" >
-
-                {/* <InfiniteMovingCards
-                    data={posts}
-                    direction="right"
-                    speed="slow"
-                />
-
-                <InfiniteMovingCards
-                    data={posts}
-                    direction="left"
-                    speed="slow"
-                />
-                <InfiniteMovingCards
-                    data={posts}
-                    direction="right"
-                    speed="slow"
-                /> */}
-            </div>
-
-
             {isLoading === false && (
-                <div className="w-screen mx-auto flex flex-col gap-4 z-10  relative py-6">
+                <div className="w-screen mx-auto mt-20 flex flex-col gap-4 z-10  relative py-6">
 
                     <div className="flex items-center justify-center gap-4 transition-all duration-300 ease-in-out">
-                        {posts.slice(-6).reverse().map((item) => (
+                        {posts.slice(-8).reverse().map((item) => (
                             <HomeCard key={item.id} item={item} />
                         ))}
                     </div>
 
                     <div className="flex items-center justify-center gap-4 transition-all duration-300 ease-in-out">
-                        {posts.slice(-13, -6).map((item) => (
+                        {posts.slice(-15, -8).map((item) => (
                             <HomeCard key={item.id} item={item} />
                         ))}
                     </div>
 
                     <div className="flex items-center justify-center gap-4 transition-all duration-300 ease-in-out">
-                        {posts.slice(-19, -13).map((item) => (
+                        {posts.slice(-21, -15).map((item) => (
                             <HomeCard key={item.id} item={item} />
                         ))}
                     </div>
