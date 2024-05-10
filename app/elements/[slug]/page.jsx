@@ -9,6 +9,7 @@ const ElementsCat = () => {
 
     const { slug } = useParams()
     const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,6 +26,13 @@ const ElementsCat = () => {
                 setPosts(data.posts);
             } catch (error) {
                 console.error(error);
+
+            } finally {
+                const timeout = setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+
+                return () => clearTimeout(timeout);
             }
         };
 
@@ -44,7 +52,7 @@ const ElementsCat = () => {
 
                 <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 items-center justify-center gap-4 '>
                     {filterData?.map((item) => (
-                        <Card key={item.id} item={item} />
+                        <Card key={item.id} item={item} isLoading={isLoading} />
                     ))}
                 </div>
             </div>

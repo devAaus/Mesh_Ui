@@ -33,7 +33,7 @@ const Sidebar = () => {
 
 
     return (
-        <div className='w-[250px] h-screen mx-4 hidden  lg:block'>
+        <div className='w-[250px] h-screen mx-4 hidden lg:block transition-all duration-300 ease-in-out'>
             <div className=' flex flex-col gap-1 overflow-hidden' >
 
                 {isLoaded &&

@@ -13,7 +13,7 @@ const Navbar = () => {
     const inView = useInView(ref, { once: true })
 
     return (
-        <nav className='w-full h-16 fixed top-0 z-50 bg-transparent backdrop-blur-xl' ref={ref}>
+        <nav className='w-full h-16 fixed top-0 z-50 bg-transparent backdrop-blur-xl ' ref={ref}>
 
             <motion.div
                 initial={{ opacity: 0, y: -100 }}
@@ -22,7 +22,7 @@ const Navbar = () => {
             >
                 <div className='grid grid-cols-2 lg:grid-cols-3 items-center'>
 
-                    <div className='flex gap-4 lg:gap-8 mx-auto xl:mx-0 items-center '>
+                    <div className='flex gap-4 lg:gap-8 mx-auto items-center '>
 
                         <Link href={'/'}>
                             <Image src={'/logo.svg'} alt='logo' width={70} height={80} loading='lazy' />
@@ -34,7 +34,7 @@ const Navbar = () => {
                         </btn>
                     </div>
 
-                    <form className='hidden border bg-white shadow-xl rounded-full lg:flex items-center px-2 h-8'>
+                    <form className='hidden bg-white shadow-xl rounded-full lg:flex items-center px-2 h-8 '>
                         <input type="text " placeholder='Search for components ....' className='p-2 rounded-full outline-none w-[93%] bg-transparent' />
 
                         <button type='submit '>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         </button>
                     </form>
 
-                    <div className='flex gap-4 lg:gap-8 ml-auto md:mx-auto items-center '>
+                    <div className=' flex gap-4 lg:gap-8 mx-auto items-center '>
 
                         <h1 className='text-base font-medium text-gray-400'>v1.0</h1>
 

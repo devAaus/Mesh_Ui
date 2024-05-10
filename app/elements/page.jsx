@@ -8,7 +8,7 @@ import CardList from '@/components/CardList'
 const AllElements = () => {
 
     const [posts, setPosts] = useState([]);
-    const [loaded, setLoaded] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -21,9 +21,15 @@ const AllElements = () => {
 
                 const data = await res.json();
                 setPosts(data.posts);
-                setLoaded(true);
+
             } catch (error) {
                 console.error(error);
+            } finally {
+                const timeout = setTimeout(() => {
+                    setIsLoading(false);
+                }, 2000);
+
+                return () => clearTimeout(timeout);
             }
         };
 
@@ -36,10 +42,10 @@ const AllElements = () => {
 
             <Sidebar />
 
-            <div className='w-screen  xl:w-[calc(100%-250px)] mx-auto px-2 md:px-4 flex flex-col gap-8'>
+            <div className='w-screen  xl:w-[calc(100%-250px)] mx-auto px-2 md:px-4 flex flex-col gap-8 '>
                 <h4 className='text-3xl font-bold text-hLight dark:text-hDark'>All Components</h4>
 
-                {loaded && <CardList data={posts} loaded={loaded} />}
+                <CardList data={posts} isLoading={isLoading} />
             </div>
 
         </div>
