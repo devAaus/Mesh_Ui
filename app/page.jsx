@@ -2,6 +2,7 @@
 
 import HomeCard from "@/components/HomeCard";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
@@ -16,15 +17,13 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`/api/components`, {
-                    cache: "no-store",
-                });
+                const res = await axios.get('/api/components');
 
-                if (!res.ok) {
-                    throw new Error("Failed to fetch data");
+                if (res.status !== 200) {
+                    throw new Error('Failed to fetch data');
                 }
 
-                const data = await res.json();
+                const data = res.data;
                 setPosts(data.posts);
             } catch (error) {
                 console.error(error);
@@ -36,7 +35,6 @@ const Home = () => {
                 return () => clearTimeout(timeout);
             }
         };
-
         fetchData();
     }, []);
 

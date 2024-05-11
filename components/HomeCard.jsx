@@ -8,11 +8,11 @@ const HomeCard = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const doc = `
-                        <html>
-                            <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
-                            <body class='w-[260px] h-[150px] mx-auto flex items-center justify-center'>${item.code}</body>
-                        </html>
-                    `
+        <html>
+            <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
+            <body class='w-[260px] h-[150px] mx-auto flex items-center justify-center'>${item.code}</body>
+        </html>
+    `
 
     return (
         <div

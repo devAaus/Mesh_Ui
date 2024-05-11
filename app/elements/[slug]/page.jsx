@@ -4,6 +4,7 @@ import Sidebar from '@/components/Sidebar'
 import React, { useEffect, useState } from 'react'
 import Card from '@/components/Card'
 import { useParams } from 'next/navigation'
+import axios from 'axios'
 
 const ElementsCat = () => {
 
@@ -14,15 +15,13 @@ const ElementsCat = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`/api/components`, {
-                    cache: "no-store",
-                });
+                const res = await axios.get('/api/components');
 
-                if (!res.ok) {
+                if (res.status !== 200) {
                     throw new Error("Failed to fetch data");
                 }
 
-                const data = await res.json();
+                const data = res.data;
                 setPosts(data.posts);
             } catch (error) {
                 console.error(error);

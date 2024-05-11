@@ -1,21 +1,23 @@
+
 import Sidebar from '@/components/Sidebar';
 import React from 'react'
 import ComponentBox from '@/components/ComponentBox';
+import axios from 'axios';
 
 const getData = async (id) => {
     try {
-        const res = await fetch(
+        const res = await axios.get(
             `${process.env.NEXTAUTH_URL}/api/components/${id}`,
             {
                 cache: "no-store",
             }
         );
 
-        if (!res.ok) {
-            throw new Error("Failed");
+        if (res.status !== 200) {
+            throw new Error("Failed to fetch data");
         }
 
-        return res.json();
+        return res.data
     } catch (error) {
         throw new Error(error);
     }

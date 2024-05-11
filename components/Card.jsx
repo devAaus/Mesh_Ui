@@ -10,7 +10,7 @@ const Card = ({ item, isLoading }) => {
     const doc = `
         <html>
             <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
-            <body class='w-[260px] h-[150px] mx-auto flex items-center justify-center'>${item.code}</body>
+            <body class='w-[250px] h-[150px] mx-auto flex items-center justify-center border'>${item.code}</body>
         </html>
     `
 
@@ -39,7 +39,7 @@ const Card = ({ item, isLoading }) => {
                     onMouseLeave={() => setIsHovered(false)}
                 >
 
-                    <div className='w-full h-full flex items-center justify-center'>
+                    <div className='w-full h-full flex items-center justify-center '>
                         <iframe
                             srcDoc={doc}
                             sandbox="allow-scripts"
