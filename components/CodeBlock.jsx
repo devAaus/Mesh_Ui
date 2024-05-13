@@ -1,9 +1,8 @@
 "use client"
 
-import React from 'react';
-import { duotoneDark } from "@uiw/codemirror-theme-duotone";
-import CodeMirror from '@uiw/react-codemirror'
-import { html } from '@codemirror/lang-html'
+// import { duotoneDark } from "@uiw/codemirror-theme-duotone";
+// import CodeMirror from '@uiw/react-codemirror'
+// import { html } from '@codemirror/lang-html'
 
 import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
@@ -67,13 +66,10 @@ const CodeBlock = ({ language, value, onChange }) => {
             padding={10}
             className='npm_react-somple-code-editor_textarea'
             style={{
-                fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 16,
                 backgroundColor: '#2a2734',
                 color: '#ffffff',
                 overflow: 'auto',
-                border: 'none',
-                outline: 'none'
             }}
         />
     );
